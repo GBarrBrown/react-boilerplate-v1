@@ -4,11 +4,10 @@
   "description": "a basic react boilerplate",
   "main": "index.js",
   "scripts": {
-    "client": "webpack-dev-server --hot --inline",
-    "dev": "node server & webpack --watch",
-    "server": "node server",
-    "start": "webpack && node server",
-    "test": "jest --watchAll"
+    "build": "yarn build-server && yarn build-client",
+    "build-server": "babel src/server --out-dir ./dist",
+    "build-client": "babel src/client --copy-files --out-dir ./dist/public",
+    "start": "node ./dist/index.js"
   },
   "repository": "https://github.com/GBarrBrown/react-boilerplate-v1.git",
   "author": "gbarrbrown <gbb7899@gmail.com>",
